@@ -154,7 +154,7 @@ namespace RedBall
         }
         public void OnclickExit()
         {
-
+            SceneManager.LoadScene(1);
         }    
         #endregion
     }
