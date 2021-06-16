@@ -9,11 +9,11 @@ namespace RedBall
     {
         public void OnCLickLevel()
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(SceneName.Level.ToString());
         }
         public void OnCLickMultiplayer()
         {
-
+            SceneManager.LoadScene(SceneName.Multiplayer.ToString());
         }
         public void OnCLickExit()
         {

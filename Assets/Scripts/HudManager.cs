@@ -150,11 +150,11 @@ namespace RedBall
         }
         public void OnclickRetry()
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(SceneName.Level.ToString());
         }
         public void OnclickExit()
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(SceneName.MainMenu.ToString());
         }    
         #endregion
     }
