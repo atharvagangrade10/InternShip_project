@@ -9,6 +9,9 @@ using UnityEngine.UI;
 
 namespace RedBall
 {
+    /// <summary>
+    /// This class Helps login,join room,create room in server
+    /// </summary>
     public class MultiplayerController : MonoBehaviourPunCallbacks
     {
         [Header("Login Panel")]
@@ -78,7 +81,16 @@ namespace RedBall
             if (!name.Equals(""))
             {
                 PhotonNetwork.NickName = name;
-                PhotonNetwork.ConnectUsingSettings();
+                if (!PhotonNetwork.IsConnected)
+                {
+                    PhotonNetwork.ConnectUsingSettings();
+                }
+                else
+                {
+                    PhotonNetwork.Disconnect();
+                    PhotonNetwork.ConnectUsingSettings();
+                }
+                
             }
         }
         /// <summary>
@@ -129,6 +141,7 @@ namespace RedBall
         {
             SetActivePanel(selectionPanel.name);
         }
+        
         public override void OnCreateRoomFailed(short returnCode, string message)
         {
             SetActivePanel(selectionPanel.name);

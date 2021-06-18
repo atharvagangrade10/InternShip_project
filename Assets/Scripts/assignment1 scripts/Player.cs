@@ -16,6 +16,8 @@ namespace RedBall
         public int count = 0;
         public float maxTouchTime;
         public bool debug;
+
+        #region Unity
         // Start is called before the first frame update
         void Start()
         {
@@ -26,18 +28,11 @@ namespace RedBall
         void Update()
         {
             Movements();
-            if (count == 1)
-            {
-                timer += Time.deltaTime;
-                if (timer > maxTouchTime)
-                {
-                    count = 0;
-                    timer = 0;
-                }
-            }
-
-            //print(spColl.bounds.extents.y);
+            countTimer();
         }
+        #endregion
+
+        #region Player Methods
         void Movements()
         {
             grounded = IsGrounded();
@@ -115,6 +110,7 @@ namespace RedBall
 
             return false;
         }
+
         public void IsDoubleTap()
         {
             if (PlayerHit())
@@ -138,6 +134,22 @@ namespace RedBall
             }
 
         }
+
+
+        // It calculates the amount of time for double tap 
+        void countTimer()
+        {
+            if (count == 1)
+            {
+                timer += Time.deltaTime;
+                if (timer > maxTouchTime)
+                {
+                    count = 0;
+                    timer = 0;
+                }
+            }
+        }
+        #endregion
     }
 
 }

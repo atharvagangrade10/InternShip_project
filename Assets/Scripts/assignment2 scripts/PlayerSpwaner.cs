@@ -9,6 +9,7 @@ namespace RedBall
     {
         private GameObject playArea1;
         private GameObject playArea2;
+        private GameObject winPanel;
 
         // Start is called before the first frame update
         void Start()
@@ -20,14 +21,19 @@ namespace RedBall
             else
             {
                 playArea2 = PhotonNetwork.Instantiate("HUD2", Vector3.zero, Quaternion.identity);
+                
             }
-            
+            winPanel = PhotonNetwork.Instantiate("winPanel", Vector3.zero, Quaternion.identity);
         }
 
         // Update is called once per frame
         void Update()
         {
 
+        }
+        void destroyWinPanel()
+        {
+            Destroy(winPanel);
         }
     }
 

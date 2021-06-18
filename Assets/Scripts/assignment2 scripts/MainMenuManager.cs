@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 namespace RedBall
 {
+    /// <summary>
+    /// This Class manage the Main Menu
+    /// </summary>
     public class MainMenuManager : MonoBehaviour
     {
         public void OnCLickLevel()

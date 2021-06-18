@@ -43,6 +43,15 @@ MonoBehaviour:
   - changeText1
   - fillchange1
   - time
+  - timeDisplay
+  - changeTurnText
+  - changePosition
+  - changeTurn
+  - changeTurnText1
+  - changeTurnText2
+  - ActiveWinPanel
+  - changeWinText1
+  - changeWinText2
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
